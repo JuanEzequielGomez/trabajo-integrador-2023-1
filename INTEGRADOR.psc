@@ -20,38 +20,10 @@ Funcion crearCuenta()
 	Leer clave;
 	Escribir Sin Saltar "Vuelva a escribir la clave para confirmar: ";
 	Leer aux;
-	
-	
 FinFuncion
 
-
-
-
-
-Proceso Proyecto_Integrador
-	Definir usuario, contrasenia Como Caracter;
-	Definir cuenta Como Logico;
-	Definir opc Como Entero;;
-	
-	cuenta <- Falso;
-	Escribir "Bienvenidos al HomeBanking de la UTN-SR";
-	
-	Escribir "";
-	Escribir "1-	Iniciar sesion ";
-	Escribir "";
-	Escribir "2-	Crear cuenta: ";
-	Leer opc;
-	Segun opc Hacer
-		1:
-			cuenta <- Verdadero;
-		2:
-			cuenta <- Falso;
-			crearCuenta();
-		De Otro Modo:
-			Escribir "Opcion no valida, por favor ingrese una opcion correcta.";
-	FinSegun
-	
-	
+Funcion iniciarSesion()
+	Definir usuario, contrasenia Como caracter;
 	
 	Escribir "";
 	Escribir Sin Saltar "Ingrese su usuario: ";
@@ -65,6 +37,50 @@ Proceso Proyecto_Integrador
 	
 	Escribir "";
 	Escribir "Registrate ";
+FinFuncion
+
+
+
+
+Proceso Proyecto_Integrador
+	Definir usuario, contrasenia Como Caracter;
+	Definir cuenta Como Logico;
+	Definir opc Como Entero;
+	Definir balance Como Entero;
+	Definir balanceInicial Como Entero;
 	
+	cuenta <- Falso;
+	balance <- 0;
+	balanceInicial <- 10000;
 	
+	Escribir "Bienvenidos al HomeBanking de la UTN-SR";
+	
+	Escribir "";
+	Escribir "1-	Iniciar sesion ";
+	Escribir "";
+	Escribir "2-	Crear cuenta: ";
+	Leer opc;
+	Segun opc Hacer
+		1:
+			cuenta <- Verdadero;
+			iniciarSesion();
+			balance <- balanceInicial;
+ 		2:
+			cuenta <- Falso;
+			crearCuenta();
+		De Otro Modo:
+			Escribir "Opcion no valida, por favor ingrese una opcion correcta.";
+	FinSegun
+	
+	Limpiar Pantalla
+	
+	Escribir "Bienvenido al HomeBanking de la UTN-SR";
+	Escribir usuario;
+	Escribir "Dinero: ", balance;
+	mostrarMenu()
 FinProceso
+
+Funcion mostrarMenu() 
+	Escribir "Menu"
+FinFuncion
+	
