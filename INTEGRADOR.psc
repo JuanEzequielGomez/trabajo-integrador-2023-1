@@ -72,15 +72,15 @@ Proceso Proyecto_Integrador
 			Escribir "Opcion no valida, por favor ingrese una opcion correcta.";
 	FinSegun
 	
-	Limpiar Pantalla
+	Limpiar Pantalla;
 	
 	Escribir "Bienvenido al HomeBanking de la UTN-SR";
 	Escribir usuario;
 	Escribir "Dinero: ", balance;
-	mostrarMenu()
+	mostrarMenu();
 FinProceso
 
 Funcion mostrarMenu() 
-	Escribir "Menu"
+	Escribir "Menu";
 FinFuncion
 	
